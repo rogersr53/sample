@@ -1,0 +1,7 @@
+traefik.enable=true
+traefik.docker.network=proxy
+traefik.http.routers.sample-secure.entrypoints=websecure
+traefik.http.routers.sample-secure.rule=Host(`sample.i2vcloud.xyz`)
+traefik.http.routers.sample-secure.service=sample
+traefik.http.routers.sample.tls.certresolver=le
+traefik.http.services.sample.loadbalancer.server.port=8000
